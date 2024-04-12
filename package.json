@@ -1,5 +1,10 @@
 {
   "name": "blog_app",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/oTiagoGs/blog_app.git",
+  "author": "oTiagoGs <tiagoguimaraes81@gmail.com>",
+  "license": "MIT"
 }
