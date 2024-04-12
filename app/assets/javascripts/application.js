@@ -12,3 +12,4 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require popper.js/dist/umd/popper

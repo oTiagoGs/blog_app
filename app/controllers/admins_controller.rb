@@ -1,4 +1,4 @@
 class AdminsController < ApplicationController
     before_action :authenticate_admin!
-    layout 'admins_backoffice'
+    layout 'admins'
 end
