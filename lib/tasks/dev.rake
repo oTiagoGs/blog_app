@@ -5,7 +5,8 @@ namespace :dev do
   desc "Configura o ambiente de desenvolvimento"
   task setup: :environment do
     if Rails.env.development?
-      show_spinner("Cadastrando o administrador padrão...") { %x(rails dev:add_default_admin) }
+      show_spinner("Cadastrando administrador padrão...") { %x(rails dev:add_default_admin) }
+      show_spinner("Cadastrando administradores extras...") { %x(rails dev:add_extra_admins)}
 
     else
       "Você não está no ambiente de desenvolvimento!"
@@ -19,6 +20,17 @@ namespace :dev do
       password: DEFAULT_PASSWORD,
       password_confirmation: DEFAULT_PASSWORD
     )
+  end
+
+  desc "Cadastrando os administradores extra"
+  task add_extra_admins: :environment do
+    10.times do |i|
+      Admin.create!(
+        email: Faker::Internet.email,
+        password: DEFAULT_PASSWORD,
+        password_confirmation: DEFAULT_PASSWORD
+      )
+    end
   end
 
   private
