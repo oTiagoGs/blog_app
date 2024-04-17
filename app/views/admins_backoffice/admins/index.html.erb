@@ -23,6 +23,11 @@
                 <tr>
                     <th scope="row"><%= admin.id %></th>
                     <td><%= admin.email %></td>
+                    <td>
+                        <%= link_to edit_admins_backoffice_admin_path(admin), class:"btn btn-primary btn-circle" do %>
+                            <i style="width:20px" class="fa fa-edit"></i>
+                        <% end %>
+                    </td>
                 </tr>
                 </tbody>
             <% end %>
