@@ -11,4 +11,12 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-# Rails.application.config.assets.precompile += %w( admin.js admin.css )
+
+# app/assets
+Rails.application.config.assets.precompile += %w( admins.js admins.css )
+
+# lib/assets
+Rails.application.config.assets.precompile += %w( custom.js custom.css )
+
+# vendor/assets
+Rails.application.config.assets.precompile += %w( jquery-2.2.3/dist/jquery.js )
