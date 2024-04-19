@@ -9,23 +9,23 @@
         </ul>
         <div class="clearfix"></div>
     </div>
+
     <div class="x_content">
         <br>
-        <form class="form-label-left input_mask">
+        <%= form_with(model: [ :admins_backoffice, @admin ], local: true , class:"form-label-left input_mask") do |form| %>
 
             <div class="col-md-6 col-sm-6  form-group has-feedback">
-                <input type="email" class="form-control has-feedback-left" id="inputSuccess4" placeholder=<%= @admin.email %> disabled="disabled">
+                <%= form.text_field :email, class:"form-control has-feedback-left", id:"inputSuccess3", placeholder:"Email"%>
                 <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-                
             </div>
 
             <div class="col-md-6 col-sm-6  form-group has-feedback">
-                <input type="text" class="form-control" id="inputSuccess3" placeholder="Senha">
+                <%= form.text_field :password, class:"form-control", id:"inputSuccess2", placeholder:"Senha"%>
                 <span class="fa fa-lock form-control-feedback right" aria-hidden="true"></span>
             </div>
 
             <div class="col-md-6 col-sm-6  form-group has-feedback">
-                <input type="email" class="form-control has-feedback-left" id="inputSuccess4" placeholder="Confirmar senha">
+                <%= form.text_field :password_confirmation, class:"form-control has-feedback-left", id:"inputSuccess1", placeholder:"Confirmação da Senha"%>
                 <span class="fa fa-lock form-control-feedback left" aria-hidden="true"></span>
             </div>
 
@@ -34,11 +34,10 @@
             <div class="ln_solid"></div>
             <div class="form-group row">
                 <div class="col-md-9 col-sm-9  offset-md-3">
-                    <button class="btn btn-primary" type="reset">Reset</button>
-                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="submit" class="btn btn-success">Salvar</button>
                 </div>
             </div>
 
-        </form>
+        <% end %>
     </div>
 </div>
