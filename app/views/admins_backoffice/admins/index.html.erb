@@ -16,6 +16,13 @@
             <tr>
                 <th >ID</th>
                 <th >Email</th>
+                <th >
+                    <% if current_admin.email == "admin@admin.com" %>
+                        <%= link_to new_admins_backoffice_admin_path, class:"btn btn-success btn-circle" do %>
+                            <i style="width:15px" class="fa fa-plus"></i>
+                        <% end %>
+                    <% end %>
+                </th>
             </tr>
             </thead>
             <% @admins.each do |admin| %>
@@ -25,9 +32,6 @@
                     <td><%= admin.email %></td>
                     <td>
                         <% if current_admin.email == "admin@admin.com" %>
-                            <%= link_to new_admins_backoffice_admin_path, class:"btn btn-success btn-circle" do %>
-                                <i style="width:15px" class="fa fa-plus"></i>
-                            <% end %>
                             <%= link_to edit_admins_backoffice_admin_path(admin), class:"btn btn-primary btn-circle" do %>
                                 <i style="width:15px" class="fa fa-edit"></i>
                             <% end %>
