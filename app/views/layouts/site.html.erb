@@ -1,31 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>BlogApp</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
-
-  <body>
-    <h1>Layout Site</h1>
-    <%= yield %>
-  </body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en-us">
 
   <head>
     <meta charset="utf-8">
-    <title>Reporter - HTML Blog Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     <meta name="description" content="This is meta description">
     <meta name="author" content="Themefisher">
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="#png" type="image/x-icon">
+    <link rel="icon" href="#png" type="image/x-icon">
     
     <!-- theme meta -->
     <meta name="theme-name" content="reporter" />
@@ -35,11 +17,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Neuton:wght@700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- # CSS Plugins -->
-    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+    <title>BlogApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-    <!-- # Main Style Sheet -->
-    <link rel="stylesheet" href="css/style.css">
+    <%= stylesheet_link_tag    'application' %>
+    <%= stylesheet_link_tag    'site' %>
+
   </head>
 
   <body>
@@ -48,7 +32,7 @@
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light px-0">
           <a class="navbar-brand order-1 py-0" href="index.html">
-            <img loading="prelaod" decoding="async" class="img-fluid" src="images/logo.png" alt="Reporter Hugo">
+            <img loading="prelaod" decoding="async" class="img-fluid" src="#" alt="Reporter Hugo">
           </a>
           <div class="navbar-actions order-3 ml-0 ml-md-4">
             <button aria-label="navbar toggler" class="navbar-toggler border-0" type="button" data-toggle="collapse"
@@ -84,6 +68,8 @@
         <div class="container">
           <div class="row no-gutters-lg">
             <div class="col-12">
+              <h1>Layout Site</h1>
+              <%= yield %>
               <h2 class="section-title">Latest Articles</h2>
             </div>
             <div class="col-lg-8 mb-5 mb-lg-0">
@@ -95,7 +81,7 @@
                         <div class="post-info"> <span class="text-uppercase">04 Jun 2021</span>
                           <span class="text-uppercase">3 minutes read</span>
                         </div>
-                        <img loading="lazy" decoding="async" src="images/post/post-1.jpg" alt="Post Thumbnail" class="w-100">
+                        <img loading="lazy" decoding="async" src="#" alt="Post Thumbnail" class="w-100">
                       </div>
                     </a>
                     <div class="card-body px-0 pb-1">
@@ -119,7 +105,7 @@
                         <div class="post-info"> <span class="text-uppercase">03 Jun 2021</span>
                           <span class="text-uppercase">2 minutes read</span>
                         </div>
-                        <img loading="lazy" decoding="async" src="images/post/post-2.jpg" alt="Post Thumbnail" class="w-100">
+                        <img loading="lazy" decoding="async" src="#" alt="Post Thumbnail" class="w-100">
                       </div>
                     </a>
                     <div class="card-body px-0 pb-0">
@@ -142,7 +128,7 @@
                         <div class="post-info"> <span class="text-uppercase">02 Jun 2021</span>
                           <span class="text-uppercase">2 minutes read</span>
                         </div>
-                        <img loading="lazy" decoding="async" src="images/post/ls-2.jpg" alt="Post Thumbnail" class="w-100">
+                        <img loading="lazy" decoding="async" src="#" alt="Post Thumbnail" class="w-100">
                       </div>
                     </a>
                     <div class="card-body px-0 pb-0">
@@ -165,7 +151,7 @@
                         <div class="post-info"> <span class="text-uppercase">01 Jun 2021</span>
                           <span class="text-uppercase">3 minutes read</span>
                         </div>
-                        <img loading="lazy" decoding="async" src="images/post/cr-1.jpg" alt="Post Thumbnail" class="w-100">
+                        <img loading="lazy" decoding="async" src="#" alt="Post Thumbnail" class="w-100">
                       </div>
                     </a>
                     <div class="card-body px-0 pb-0">
@@ -189,7 +175,7 @@
                         <div class="post-info"> <span class="text-uppercase">30 May 2021</span>
                           <span class="text-uppercase">3 minutes read</span>
                         </div>
-                        <img loading="lazy" decoding="async" src="images/post/cr-2.jpg" alt="Post Thumbnail" class="w-100">
+                        <img loading="lazy" decoding="async" src="#" alt="Post Thumbnail" class="w-100">
                       </div>
                     </a>
                     <div class="card-body px-0 pb-0">
@@ -213,7 +199,7 @@
                         <div class="post-info"> <span class="text-uppercase">29 May 2021</span>
                           <span class="text-uppercase">3 minutes read</span>
                         </div>
-                        <img loading="lazy" decoding="async" src="images/post/post-4.jpg" alt="Post Thumbnail" class="w-100">
+                        <img loading="lazy" decoding="async" src="#" alt="Post Thumbnail" class="w-100">
                       </div>
                     </a>
                     <div class="card-body px-0 pb-0">
@@ -236,7 +222,7 @@
                         <div class="post-info"> <span class="text-uppercase">28 May 2021</span>
                           <span class="text-uppercase">2 minutes read</span>
                         </div>
-                        <img loading="lazy" decoding="async" src="images/post/post-8.jpg" alt="Post Thumbnail" class="w-100">
+                        <img loading="lazy" decoding="async" src="#" alt="Post Thumbnail" class="w-100">
                       </div>
                     </a>
                     <div class="card-body px-0 pb-0">
@@ -296,7 +282,7 @@
           <div class="col-lg-12">
             <div class="widget">
               <div class="widget-body">
-                <img loading="lazy" decoding="async" src="images/author.jpg" alt="About Me" class="w-100 author-thumb-sm d-block">
+                <img loading="lazy" decoding="async" src="#" alt="About Me" class="w-100 author-thumb-sm d-block">
                 <h2 class="widget-title my-3">Hootan Safiyari</h2>
                 <p class="mb-3 pb-2">Hello, I’m Hootan Safiyari. A Content writter, Developer and Story teller. Working as a Content writter at CoolTech Agency. Quam nihil …</p> <a href="about.html" class="btn btn-sm btn-outline-primary">Know
                   More</a>
@@ -312,7 +298,7 @@
                     <div class="card-image">
                       <div class="post-info"> <span class="text-uppercase">1 minutes read</span>
                       </div>
-                      <img loading="lazy" decoding="async" src="images/post/post-9.jpg" alt="Post Thumbnail" class="w-100">
+                      <img loading="lazy" decoding="async" src="#" alt="Post Thumbnail" class="w-100">
                     </div>
                     <div class="card-body px-0 pb-1">
                       <h3><a class="post-title post-title-sm"
@@ -324,7 +310,7 @@
                     </div>
                   </article>
                   <a class="media align-items-center" href="article.html">
-                    <img loading="lazy" decoding="async" src="images/post/post-2.jpg" alt="Post Thumbnail" class="w-100">
+                    <img loading="lazy" decoding="async" src="#" alt="Post Thumbnail" class="w-100">
                     <div class="media-body ml-3">
                       <h3 style="margin-top:-5px">These Are Making It Easier To Visit</h3>
                       <p class="mb-0 small">Heading Here is example of hedings. You can use …</p>
@@ -337,14 +323,14 @@
                     </div>
                   </a>
                   <a class="media align-items-center" href="article.html">
-                    <img loading="lazy" decoding="async" src="images/post/post-5.jpg" alt="Post Thumbnail" class="w-100">
+                    <img loading="lazy" decoding="async" src="#" alt="Post Thumbnail" class="w-100">
                     <div class="media-body ml-3">
                       <h3 style="margin-top:-5px">Perfect For Fashion</h3>
                       <p class="mb-0 small">Lorem ipsum dolor sit amet, consectetur adipiscing …</p>
                     </div>
                   </a>
                   <a class="media align-items-center" href="article.html">
-                    <img loading="lazy" decoding="async" src="images/post/post-9.jpg" alt="Post Thumbnail" class="w-100">
+                    <img loading="lazy" decoding="async" src="#" alt="Post Thumbnail" class="w-100">
                     <div class="media-body ml-3">
                       <h3 style="margin-top:-5px">Record Utra Smooth Video</h3>
                       <p class="mb-0 small">Lorem ipsum dolor sit amet, consectetur adipiscing …</p>
@@ -398,7 +384,7 @@
         <div class="row">
           <div class="col-lg-10 mx-auto text-center">
             <a class="d-inline-block mb-4 pb-2" href="index.html">
-              <img loading="prelaod" decoding="async" class="img-fluid" src="images/logo-white.png" alt="Reporter Hugo">
+              <img loading="prelaod" decoding="async" class="img-fluid" src="#" alt="Reporter Hugo">
             </a>
             <ul class="p-0 d-flex navbar-footer mb-0 list-unstyled">
               <li class="nav-item my-0"> <a class="nav-link" href="about.html">About</a></li>
@@ -413,13 +399,8 @@
       <div class="copyright bg-dark content">Designed &amp; Developed By <a href="https://themefisher.com/">Themefisher</a></div>
     </footer>
 
-
-    <!-- # JS Plugins -->
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <script src="plugins/bootstrap/bootstrap.min.js"></script>
-
-    <!-- Main Script -->
-    <script src="js/script.js"></script>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'site' %>
 
   </body>
 </html>
