@@ -2,7 +2,9 @@ class AdminsBackoffice::ArticlesController < AdminsController
     before_action :set_article, only: [:edit, :update, :destroy]
 
     def index
-        @articles = Article.all.order(:created_at).page(params[:page])
+        @articles = Article.includes(:admin, :subject)
+                           .order(:created_at)
+                           .page(params[:page])
     end
 
     def new
