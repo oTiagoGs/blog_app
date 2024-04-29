@@ -9,6 +9,7 @@ namespace :dev do
       show_spinner("Cadastrando administrador padrão...") { %x(rails dev:add_default_admin) }
       show_spinner("Cadastrando administradores extras...") { %x(rails dev:add_extra_admins)}
       show_spinner("Cadastrando Assuntos padrão...") { %x(rails dev:add_subjects)}
+      show_spinner("Cadastrando Artigos para cada assunto...") { %x(rails dev:add_article_to_subject)}
 
     else
       "Você não está no ambiente de desenvolvimento!"
@@ -42,6 +43,21 @@ namespace :dev do
       
     File.open(file_path, 'r').each do |line|
       Subject.create!(description: line.strip)
+    end
+  end
+
+  desc "Cadastrando Articles para cada assunto"
+  task add_article_to_subject: :environment do
+    Subject.all.each do |subject|
+      rand(1..5).times do |i|
+        Article.create!(
+          title: Faker::Lorem.sentence,
+          description: Faker::Lorem.paragraph,
+          content: Faker::Lorem.paragraph_by_chars(number: 350),
+          subject: subject,
+          admin: Admin.all.sample
+        )
+      end
     end
   end
 
