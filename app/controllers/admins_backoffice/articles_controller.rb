@@ -1,5 +1,6 @@
 class AdminsBackoffice::ArticlesController < AdminsController
     before_action :set_article, only: [:edit, :update, :destroy]
+    before_action :get_subjects, only: [:new , :create, :edit]
 
     def index
         @articles = Article.includes(:admin, :subject)
@@ -12,7 +13,7 @@ class AdminsBackoffice::ArticlesController < AdminsController
     end
 
     def create
-        @article = Article.new(article_params)
+        @article = current_admin.article.new(article_params)
         if @article.save
             redirect_to admins_backoffice_articles_path , notice: "Artigo criado com sucesso"
         else
@@ -32,7 +33,7 @@ class AdminsBackoffice::ArticlesController < AdminsController
     end
 
     def destroy
-        if @article.destroy(article_params)
+        if @article.destroy
             redirect_to admins_backoffice_articles_path , notice: "Artigo excluido com sucesso!!"
         else
             render :index
@@ -47,5 +48,9 @@ class AdminsBackoffice::ArticlesController < AdminsController
 
     def set_article
         @article = Article.find(params[:id])
+    end
+
+    def get_subjects
+        @subjects = Subject.all
     end
 end
