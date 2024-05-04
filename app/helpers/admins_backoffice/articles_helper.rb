@@ -1,0 +1,2 @@
+module AdminsBackoffice::ArticlesHelper
+end
