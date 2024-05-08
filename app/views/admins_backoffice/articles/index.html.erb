@@ -28,7 +28,7 @@
                     <td><%= article.title.truncate(30) %></td>
                     <td><%= article.description.truncate(35) %></td>
                     <td><%= article.content.truncate(50) %></td>
-                    <td><%= article.url_image %></td>
+                    <td><%= article.url_image.truncate(40) if article.url_image? %></td>
                     <td><%= article.subject.description %></td>
                     <td><%= article.admin.email %></td>
                     <td>

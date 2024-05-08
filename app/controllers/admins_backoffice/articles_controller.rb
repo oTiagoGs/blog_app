@@ -4,7 +4,7 @@ class AdminsBackoffice::ArticlesController < AdminsController
 
     def index
         @articles = Article.includes(:admin, :subject)
-                           .order(:created_at)
+                           .order("id desc")
                            .page(params[:page])
     end
 

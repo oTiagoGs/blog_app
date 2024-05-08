@@ -6,6 +6,13 @@ class Article < ApplicationRecord
   validates :title, :content, presence: true
 
   # Pagination
-  paginates_per 5
+  paginates_per 6
   
+  # Scopes
+  scope :last_articles, ->(page){
+    includes(:subject)
+    .order('id desc')
+    .page(page)
+  }
+
 end
