@@ -14,8 +14,8 @@
         <table class="table table-hover">
             <thead>
             <tr>
-                <th >ID</th>
-                <th >Email</th>
+                <th >#</th>
+                <th ><%= translate_field(@admins, :email) %></th>
                 <th >
                     <% if current_admin.email == "admin@admin.com" %>
                         <%= link_to new_admins_backoffice_admin_path, class:"btn btn-success btn-circle" do %>

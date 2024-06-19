@@ -8,11 +8,11 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Titulo</th>
-                <th>Descrição</th>
-                <th>Conteúdo</th>
-                <th>Url_image</th>
-                <th>Assunto</th>
+                <th><%= translate_field(@articles, :title) %></th>
+                <th><%= translate_field(@articles, :description) %></th>
+                <th><%= translate_field(@articles, :content) %></th>
+                <th><%= translate_field(@articles, :url_image) %></th>
+                <th><%= translate_field(@articles, :subject_id) %></th>
                 <th>Criado por</th>
                 <th>
                     <%= link_to new_admins_backoffice_article_path, class:"btn btn-success btn-circle" do %>
@@ -28,7 +28,7 @@
                     <td><%= article.title.truncate(30) %></td>
                     <td><%= article.description.truncate(35) %></td>
                     <td><%= article.content.truncate(50) %></td>
-                    <td><%= article.url_image.truncate(40) if article.url_image? %></td>
+                    <td><%= article.url_image.truncate(30) if article.url_image? %></td>
                     <td><%= article.subject.description %></td>
                     <td><%= article.admin.email %></td>
                     <td>
