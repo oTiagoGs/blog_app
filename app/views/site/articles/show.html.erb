@@ -1,0 +1,22 @@
+<main style=margin-bottom:10%>
+  <section class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 mb-5 mb-lg-0">
+					<article>
+            <span><strong>Assunto: </strong><%= @article.subject.description %> </span><br>
+            <span><strong>Publicado por: </strong><%= @article.admin.email %> <strong>data:</strong> <%= @article.created_at %> </span><br>
+            <% if @article.url_image?  %>
+              <%= image_tag @article.url_image, alt:"Post Thumbnail", class:"w-100"%>
+            <% end %>
+            <div class="content text-left">
+							<h1 id="heading"> <%= @article.title %> </h1>
+							<h2 id="emphasis"> <%= @article.description %> </h2>
+							<p> <%= @article.content %> </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

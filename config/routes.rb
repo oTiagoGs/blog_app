@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   namespace :site do
     get 'welcome/index'
+    resources :articles, only: [:show]
   end
 
   root to: 'site/welcome#index'
