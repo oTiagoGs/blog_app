@@ -94,7 +94,7 @@
                   <div class="widget-body">  
                     <ul class="widget-list">
                       <% @subjects.each do |subject| %>
-                        <li><a href="#!"> <%= subject.description %></a>
+                        <li><%= link_to subject.description, site_articles_subject_path(subject.id, subject.description) %>
                         </li>
                       <% end %>
                     </ul>
