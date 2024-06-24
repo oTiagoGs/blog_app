@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row no-gutters-lg">
         <div class="col-12">
-          <h2 class="section-title">Artigos mais recentes</h2>
+          <h2 class="section-title"> <%= msg_jumbotron %> </h2>
         </div>
         <div class="col-lg-8 mb-5 mb-lg-0">
           <div class="row">
@@ -23,7 +23,7 @@
                   <% end %>
                   <div class="card-body px-0 pb-0">
                     <ul class="post-meta mb-2">
-                      <li> <%= article.subject.description %>
+                      <li> <%= link_to article.subject.description, site_articles_subject_path(article.subject_id, article.subject.description) %>
                       </li>
                     </ul>
                     <h2>

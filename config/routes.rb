@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   namespace :site do
     get 'welcome/index'
     resources :articles, only: [:show]
+    get 'subject/:subject_id/:subject', to: 'articles#subject', as: 'articles_subject'
   end
 
   root to: 'site/welcome#index'
