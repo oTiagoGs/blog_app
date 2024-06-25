@@ -23,7 +23,8 @@
                   <% end %>
                   <div class="card-body px-0 pb-0">
                     <ul class="post-meta mb-2">
-                      <li> <%= link_to article.subject.description, site_articles_subject_path(article.subject_id, article.subject.description) %>
+                      <li> <%= link_to article.subject.description,
+                                site_articles_subject_path(article.subject_id, article.subject.description) %>
                       </li>
                     </ul>
                     <h2>
@@ -94,7 +95,9 @@
                   <div class="widget-body">  
                     <ul class="widget-list">
                       <% @subjects.each do |subject| %>
-                        <li><%= link_to subject.description, site_articles_subject_path(subject.id, subject.description) %>
+                        <li><%= link_to "#{subject.description}
+                                        (#{subject.articles_count})", 
+                                        site_articles_subject_path(subject.id, subject.description) %>
                         </li>
                       <% end %>
                     </ul>

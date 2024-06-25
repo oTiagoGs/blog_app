@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-  belongs_to :subject
+  belongs_to :subject, counter_cache: true
   belongs_to :admin
 
   # Validations
