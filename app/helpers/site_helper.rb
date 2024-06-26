@@ -1,9 +1,10 @@
 module SiteHelper
     def msg_jumbotron
-        case params[:action]
-        when 'index'
+        if params[:q]
+            "Resultado para a pesquisa: #{params[:q].values}"
+        elsif params[:action] == "index"
             "Artigos mais recentes"
-        when 'subject'
+        else params[:action] == "subject"
             "Artigos do assunto: \"#{params[:subject]}\""
         end
     end
