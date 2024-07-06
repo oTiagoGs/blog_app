@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   namespace :admins_backoffice do
     get 'welcome/index' # Dashboard
+    get 'profile', to: 'profile#edit'
+    patch 'profile', to: 'profile#update'
     resources :admins # Administradores
     resources :subjects # Assuntos
     resources :articles # Artigos

@@ -34,7 +34,7 @@
               </div>
               <div class="profile_info">
                 <span>Bem-vindo,</span>
-                <h2>John Doe</h2>
+                <h2><%= current_admin.full_name %></h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -53,8 +53,15 @@
                     <% end %>
                   </li>
                   <li> 
-                    <%= link_to admins_backoffice_admins_path do %>
-                      <i class="fa fa-users"></i> Administradores
+                    <%= link_to admins_backoffice_profile_path do %>
+                      <i class="fa fa-user"></i> Dados do Perfil
+                    <% end %>
+                  </li>
+                  <li>
+                    <% if current_admin.email == "admin@admin.com"%>
+                      <%= link_to admins_backoffice_admins_path do %>
+                        <i class="fa fa-users"></i> Administradores
+                      <% end %>
                     <% end %>
                   </li>
                   <li> 

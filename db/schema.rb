@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_06_25_194924) do
+ActiveRecord::Schema.define(version: 2024_07_02_195928) do
+
+  create_table "admin_profiles", force: :cascade do |t|
+    t.string "first_name"
+    t.string "second_name"
+    t.string "gender"
+    t.string "cpf"
+    t.date "birthdate"
+    t.integer "admin_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_admin_profiles_on_admin_id"
+  end
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false

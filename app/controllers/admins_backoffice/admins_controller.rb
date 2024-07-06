@@ -8,6 +8,7 @@ class AdminsBackoffice::AdminsController < AdminsController
 
   def new
     @admin = Admin.new
+    @admin.build_admin_profile
   end
 
   def create
@@ -21,6 +22,7 @@ class AdminsBackoffice::AdminsController < AdminsController
   end
 
   def edit
+    @admin.build_admin_profile if @admin.admin_profile.blank?
   end
 
   def update
@@ -42,7 +44,8 @@ class AdminsBackoffice::AdminsController < AdminsController
   private
 
   def admin_params
-    params.require(:admin).permit(:email, :password, :password_confirmation)
+    params.require(:admin).permit(:email, :password, :password_confirmation,
+    admin_profile_attributes: [:id, :first_name, :second_name, :gender, :cpf, :birthdate])
   end
 
   def set_admin
