@@ -20,7 +20,8 @@ Rails.application.config.assets.precompile += %w( admins.js admins.css
 # lib/assets
 Rails.application.config.assets.precompile += %w( custom.js custom.css
                                                   script.js style.css 
-                                                  custom_admin.css)
+                                                  custom_admin.css
+                                                  img.jpg)
 
 # vendor/assets
 Rails.application.config.assets.precompile += %w( jquery-2.2.3/dist/jquery.js )

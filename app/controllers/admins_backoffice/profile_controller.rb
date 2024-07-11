@@ -9,7 +9,11 @@ class AdminsBackoffice::ProfileController < AdminsController
     def update
         if @admin.update(params_admin)
             bypass_sign_in(@admin)
-            redirect_to admins_backoffice_admins_path, notice: "Perfil do administrador atualizado com sucesso!!"
+            if params_admin[:admin_profile_attributes][:avatar]
+                redirect_to admins_backoffice_welcome_index_path, notice: "Avatar atualizado com sucesso!!"
+            else
+                redirect_to admins_backoffice_profile_path, notice: "Perfil do administrador atualizado com sucesso!!"
+            end
         else
             render :edit
         end
@@ -23,7 +27,7 @@ class AdminsBackoffice::ProfileController < AdminsController
 
     def params_admin
         params.require(:admin).permit(:email, :password, :password_confirmation,
-        admin_profile_attributes: [:id, :first_name, :second_name, :gender, :cpf, :birthdate])
+        admin_profile_attributes: [:id, :first_name, :second_name, :gender, :cpf, :birthdate, :avatar])
     end 
 
     def verify_password

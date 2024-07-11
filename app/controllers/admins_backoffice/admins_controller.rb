@@ -45,7 +45,7 @@ class AdminsBackoffice::AdminsController < AdminsController
 
   def admin_params
     params.require(:admin).permit(:email, :password, :password_confirmation,
-    admin_profile_attributes: [:id, :first_name, :second_name, :gender, :cpf, :birthdate])
+    admin_profile_attributes: [:id, :first_name, :second_name, :gender, :cpf, :birthdate, :avatar])
   end
 
   def set_admin
