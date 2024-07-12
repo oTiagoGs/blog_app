@@ -3,31 +3,38 @@
     <div class="row">
       <div class="col-lg-12 col-md-6">
         <div class="widget">
-          <h2 class="section-title mb-3">Recommended</h2>
+          <h2 class="section-title mb-3">Recomendados</h2>
           <div class="widget-body">
             <div class="widget-list">
-              <article class="card mb-4">
-                <div class="card-image">
-                  <div class="post-info"> <span class="text-uppercase">1 minutes read</span>
-                  </div>
-                    <img loading="lazy" decoding="async" src="#" alt="Post Thumbnail" class="w-100">
-                  </div>
-                  <div class="card-body px-0 pb-1">
-                    <h3><a class="post-title post-title-sm"
-                      href="article.html">Portugal and France Now
-                      Allow Unvaccinated Tourists</a></h3>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor …</p>
-                    <div class="content"> <a class="read-more-btn" href="article.html">Read Full Article</a>
+              <% @articles.each do |article| %>
+                <% if article.recommended == true %>
+                  <article class="card mb-4">
+                    <%= link_to site_article_path(article) do %>
+                      <div class="card-image">
+                        <div class="post-info"> <span class="text-uppercase"> <%= article.created_at %> </span>
+                        </div>
+                        <%= image_tag article.url_image,  class:"w-100" %>
+                      </div>
+                    <% end %>
+                    
+                    <div class="card-body px-0 pb-1">
+                      <ul class="post-meta mb-2">
+                        <li> <%= link_to article.subject.description,
+                                  site_articles_subject_path(article.subject_id, article.subject.description) %>
+                        </li>
+                      </ul>
+                      <h3>
+                      <%= link_to site_article_path(article), class:"post-title" do %>
+                        <%= article.title %>
+                      <% end %>
+                      <p class="card-text"> <%= article.description %> </p>
+                      <div class="content">
+                        <%= link_to 'Ver artigo completo', site_article_path(article), class:"read-more-btn" %> 
+                      </div>
                     </div>
-                </div>
-              </article>
-              <a class="media align-items-center" href="article.html">
-                <img loading="lazy" decoding="async" src="#" alt="Post Thumbnail" class="w-100">
-                <div class="media-body ml-3">
-                  <h3 style="margin-top:-5px">These Are Making It Easier To Visit</h3>
-                  <p class="mb-0 small">Heading Here is example of hedings. You can use …</p>
-                </div>
-              </a>
+                  </article>
+                <% end %>
+              <% end %>
             </div>
           </div>
         </div>
