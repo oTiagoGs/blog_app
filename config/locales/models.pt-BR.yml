@@ -18,6 +18,13 @@
         password_confirmation: Confirmação da Senha
         created_at: Criado em
         updated_at: Atualizado em
+      admin_profile:
+        id: Código
+        first_name: Primeiro nome
+        second_name: Segundo nome
+        cpf: CPF
+        birthdate: Data de nascimento
+        gender: Gênero
       subject:
         id: Código
         description: Descrição

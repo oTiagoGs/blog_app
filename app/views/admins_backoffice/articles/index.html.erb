@@ -22,28 +22,54 @@
             </tr>
         </thead>
         <tbody>
-            <% @articles.each do |article|%>
-                <tr>
-                    <td><%= article.id %></td>
-                    <td><%= article.title.truncate(30) %></td>
-                    <td><%= article.description.truncate(35) %></td>
-                    <td><%= article.content.truncate(50) %></td>
-                    <td><%= article.url_image.truncate(30) if article.url_image? %></td>
-                    <td><%= article.subject.description %></td>
-                    <td><%= article.admin.email %></td>
-                    <td>
-                        <%= link_to edit_admins_backoffice_article_path(article), class:"btn btn-primary btn-circle" do %>
-                            <i style="width:10px" class="fa fa-edit"></i>
-                        <% end %>
-            
-                        <%= link_to admins_backoffice_article_path(article),
-                            method: :delete, class:"btn btn-danger btn-circle",
-                            data: {confirm: "Deseja excluir este artigo?"} do %>
-                            <i style="width:15px" class="fa fa-close"></i>
+            <% if current_admin.email == "admin@admin.com" %>
+                <% @articles.each do |article|%>
+                    <tr>
+                        <td><%= article.id %></td>
+                        <td><%= article.title.truncate(30) %></td>
+                        <td><%= article.description.truncate(35) %></td>
+                        <td><%= article.content.truncate(50) %></td>
+                        <td><%= article.url_image.truncate(30) if article.url_image? %></td>
+                        <td><%= article.subject.description %></td>
+                        <td><%= article.admin.email %></td>
+                        <td>
+                            <%= link_to edit_admins_backoffice_article_path(article), class:"btn btn-primary btn-circle" do %>
+                                <i style="width:10px" class="fa fa-edit"></i>
+                            <% end %>
+                
+                            <%= link_to admins_backoffice_article_path(article),
+                                method: :delete, class:"btn btn-danger btn-circle",
+                                data: {confirm: "Deseja excluir este artigo?"} do %>
+                                <i style="width:15px" class="fa fa-close"></i>
 
-                        <% end %>
-                    </td>
-                </tr>
+                            <% end %>
+                        </td>
+                    </tr>
+                <% end %>
+            <% else %>
+                <% current_admin.article.each do |article| %>
+                    <tr>
+                        <td><%= article.id %></td>
+                        <td><%= article.title.truncate(30) %></td>
+                        <td><%= article.description.truncate(35) %></td>
+                        <td><%= article.content.truncate(50) %></td>
+                        <td><%= article.url_image.truncate(30) if article.url_image? %></td>
+                        <td><%= article.subject.description %></td>
+                        <td><%= article.admin.email %></td>
+                        <td>
+                            <%= link_to edit_admins_backoffice_article_path(article), class:"btn btn-primary btn-circle" do %>
+                                <i style="width:10px" class="fa fa-edit"></i>
+                            <% end %>
+                
+                            <%= link_to admins_backoffice_article_path(article),
+                                method: :delete, class:"btn btn-danger btn-circle",
+                                data: {confirm: "Deseja excluir este artigo?"} do %>
+                                <i style="width:15px" class="fa fa-close"></i>
+
+                            <% end %>
+                        </td>
+                    </tr>
+                <% end %>
             <% end %>
         </tbody>
     </table>

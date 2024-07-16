@@ -33,7 +33,10 @@
   <div class="form-group">
     <%= form.label :subject_id %>
     <%= form.collection_select(:subject_id, @subjects, :id, :description, {}, { class:"form-control" }) %>
-  </div>
+  </div></br>
+  <div class="form-group">
+    <%= form.check_box :recommended %> Deseja colocar este artigo em Recomendados?
+  </div></br>
   <div class="form-group">
     <%= form.label :content %>
     <%= form.text_area :content, class:"form-control", rows:"10" %>
@@ -41,3 +44,15 @@
 
   <%= form.submit nil, class:"btn btn-success" %>
 <% end %>
+
+<script>
+var checkbox = document.getElementById('article_recommended')
+
+checkbox.addEventListener('change', function() {
+  if(this.checked) {
+    <% @article.recommended == true %>
+  } else {
+    <% @article.recommended == false %>
+  }
+})
+</script>
