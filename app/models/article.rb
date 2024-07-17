@@ -6,7 +6,7 @@ class Article < ApplicationRecord
   validates :title, :content, presence: true
 
   # Pagination
-  paginates_per 6
+  paginates_per 8
   
   # Scopes
   scope :_article_, ->(id){
